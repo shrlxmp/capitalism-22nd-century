@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A short film competition. Make a 5 to 10 minute film about where the economy goes from here. Submissions open 11 November, close 14 December 2026. Screening in London, January 2027.">
+<meta property="og:title" content="Capitalism in the 22nd Century">
+<meta property="og:description" content="A short film competition. 5–10 minute films about where the economy goes from here. Open 11 Nov – 14 Dec 2026. Screening in London, Jan 2027.">
+<meta property="og:type" content="website">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Capitalism in the 22nd Century</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,INFM@300..800,0..100&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
+<style>
+/* Layout: a school exercise book someone doodled a film competition into. Graph paper, ballpoint doodles, highlighter, sticky notes, two crossed tickers. */
+:root {
+  --paper: #fbfcf9;
+  --grid: #dbe6f0;
+  --margin-line: #f2a5b8;
+  --ink: #1d1f27;
+  --soft: #575c6b;
+  --pen: #5a2bb0;
+  --hl: #eef542;
+  --pink: #ff9cc6;
+  --sky: #a9e2ff;
+  --note-ink: #1d1f27;
+  --tape: rgba(255, 255, 255, 0.55);
+
+  --hand: "Shantell Sans", "Comic Neue", "Segoe Print", "Trebuchet MS", sans-serif;
+  --scrawl: "Gochi Hand", "Segoe Print", "Bradley Hand", cursive;
+  --typed: "Courier Prime", "Courier New", ui-monospace, monospace;
+  --pixel: "Silkscreen", "Courier New", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151820;
+    --grid: #232a36;
+    --margin-line: #6b3346;
+    --ink: #eceef3;
+    --soft: #a3a9b8;
+    --pen: #c0a4ff;
+    --tape: rgba(255, 255, 255, 0.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151820;
+  --grid: #232a36;
+  --margin-line: #6b3346;
+  --ink: #eceef3;
+  --soft: #a3a9b8;
+  --pen: #c0a4ff;
+  --tape: rgba(255, 255, 255, 0.25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font-family: var(--hand);
+  font-variation-settings: "INFM" 25;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+.wrap {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+a:focus-visible { outline: 3px dashed var(--pen); outline-offset: 3px; }
+
+.doodle { color: var(--pen); }
+.doodle * { stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.doodle .wob { filter: url(#wob); }
+.doodle .f-pink { fill: var(--pink); }
+.doodle .f-hl { fill: var(--hl); }
+.doodle .f-sky { fill: var(--sky); }
+.doodle .f-pen { fill: currentColor; }
+.doodle text { stroke: none; fill: currentColor; font-family: var(--scrawl); }
+
+.typed { font-family: var(--typed); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
+.scrawl { font-family: var(--scrawl); color: var(--pen); font-size: 1.35rem; line-height: 1.2; }
+
+h2 {
+  font-family: var(--hand);
+  font-variation-settings: "INFM" 100;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+}
+.hl {
+  background: linear-gradient(100deg, transparent 0.5%, var(--hl) 2%, var(--hl) 97%, transparent 99%);
+  color: var(--note-ink);
+  padding: 0 0.15em;
+  border-radius: 0.4em 0.2em 0.5em 0.15em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hl.pink { background: linear-gradient(100deg, transparent 0.5%, var(--pink) 2%, var(--pink) 97%, transparent 99%); }
+.squig { text-decoration: underline wavy var(--pen); text-decoration-thickness: 2px; text-underline-offset: 0.3em; text-decoration-skip-ink: none; }
+.head { display: grid; gap: 0.35rem; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* Hero */
+.hero { padding-block: clamp(2rem, 6vw, 4rem) 1rem; position: relative; }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: clamp(8px, 4vw, 56px);
+  width: 2px;
+  background: var(--margin-line);
+}
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: center; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-bottom: 1.25rem; }
+h1 { margin: 0; line-height: 1; }
+h1 .pre {
+  display: inline-block;
+  font-family: var(--scrawl);
+  font-weight: 400;
+  color: var(--pen);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  transform: rotate(-3deg);
+  margin-bottom: 0.4rem;
+}
+h1 .big {
+  display: block;
+  font-family: var(--hand);
+  font-variation-settings: "INFM" 100;
+  font-weight: 800;
+  font-size: clamp(3.2rem, 10vw, 6.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+.circled { position: relative; display: inline-block; padding: 0 0.12em; }
+.circled svg {
+  position: absolute;
+  left: -14%; top: -18%;
+  width: 128%; height: 140%;
+  overflow: visible;
+  pointer-events: none;
+}
+.circled svg path { stroke: var(--pink); stroke-width: 4; fill: none; stroke-linecap: round; filter: url(#wob); }
+.aside-note { margin: 0.6rem 0 0 0.3rem; transform: rotate(-1.5deg); display: inline-block; }
+.lede { font-size: 1.25rem; line-height: 1.5; max-width: 34ch; margin: 1.5rem 0 0; }
+
+.hero-art { position: relative; }
+.hero-art svg { width: 100%; height: auto; display: block; max-width: 520px; margin-inline: auto; }
+
+.sticky {
+  background: var(--hl);
+  color: var(--note-ink);
+  padding: 1.4rem 1.25rem 1.1rem;
+  position: relative;
+  box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.12);
+}
+.sticky::before {
+  content: "";
+  position: absolute;
+  top: -12px; left: 50%;
+  width: 84px; height: 24px;
+  margin-left: -42px;
+  background: var(--tape);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transform: rotate(-3deg);
+}
+.sticky .typed { color: var(--note-ink); opacity: 0.7; }
+.clock { max-width: 20rem; transform: rotate(2deg); margin-top: 2rem; }
+.clock-row { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-top: 0.25rem; }
+.clock-unit { display: grid; line-height: 1; }
+.clock-num { font-family: var(--scrawl); font-size: 2.6rem; font-variant-numeric: tabular-nums; }
+.clock-cap { font-family: var(--typed); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+.clock p { margin: 0.6rem 0 0; font-size: 0.92rem; }
+
+/* Tickers */
+.tickers { position: relative; height: 11.5rem; overflow: hidden; margin-block: 1rem; }
+.ticker {
+  position: absolute;
+  left: -5%; width: 110%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--pixel);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+.ticker.a { top: 2.6rem; transform: rotate(-2.2deg); background: var(--note-ink); color: #f3f4f7; z-index: 2; }
+.ticker.b { top: 5.2rem; transform: rotate(1.6deg); background: var(--sky); color: var(--note-ink); }
+.ticker-track { display: inline-flex; padding-block: 0.65rem; animation: tick 40s linear infinite; }
+.ticker.b .ticker-track { animation-direction: reverse; animation-duration: 52s; }
+.ticker-track span { padding-right: 2.5rem; }
+.ticker-track span span { padding-right: 0; }
+.ticker .sym { color: var(--hl); }
+.ticker .dead { color: #8b8f9c; }
+.ticker .up { color: #11703f; }
+.ticker .down { color: #b3223f; }
+.tag {
+  position: absolute;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  z-index: 4;
+  font-family: var(--scrawl);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  padding: 0.15rem 0.7rem;
+  background: var(--paper);
+  color: var(--pen);
+  border: 2px solid var(--pen);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+.tag.a { top: 0.5rem; transform: rotate(-3deg); }
+.tag.b { top: 8.1rem; transform: rotate(2deg); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; }
+@keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Brief */
+.brief { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: center; }
+.brief p { margin: 0 0 1rem; max-width: 60ch; }
+.robot { position: relative; text-align: center; }
+.robot svg { width: min(100%, 250px); height: auto; }
+.robot .scrawl { display: block; transform: rotate(-4deg); margin-top: -0.5rem; }
+
+/* Specs */
+.specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; }
+.spec {
+  border: 2.5px solid var(--ink);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  padding: 1.1rem 1.25rem 1.3rem;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: start;
+  transition: transform 0.2s ease;
+}
+.spec:nth-child(odd) { transform: rotate(-0.6deg); }
+.spec:nth-child(even) { transform: rotate(0.7deg); }
+.spec:hover { transform: rotate(0deg) scale(1.02); }
+.spec svg { width: 64px; height: 64px; grid-row: span 3; }
+.spec dt { font-family: var(--typed); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--soft); }
+.spec dd { margin: 0; }
+.spec .val { display: block; font-variation-settings: "INFM" 100; font-weight: 800; font-size: 1.6rem; line-height: 1.15; }
+.spec .sub { display: block; font-size: 0.95rem; color: var(--soft); margin-top: 0.25rem; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; position: relative; }
+.timeline li { display: grid; gap: 0.35rem; align-content: start; }
+.timeline .ico { height: 84px; display: flex; align-items: flex-end; }
+.timeline .ico svg { width: 84px; height: 84px; }
+.timeline .ico.down svg { transform: rotate(90deg); }
+.timeline .date { font-family: var(--scrawl); font-size: 1.5rem; color: var(--pen); line-height: 1.1; }
+.timeline h3 { margin: 0; font-variation-settings: "INFM" 100; font-weight: 800; font-size: 1.45rem; line-height: 1.2; }
+.timeline p { margin: 0; color: var(--soft); max-width: 32ch; }
+.track { display: block; width: 100%; height: 30px; margin-bottom: 0.5rem; }
+
+/* Rules */
+.rules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 3rem; }
+.rules li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.75rem; }
+.rules li::before {
+  content: "✓";
+  width: 1.8rem; height: 1.8rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 20% 35% 25% 40% / 35% 20% 40% 25%;
+  font-family: var(--scrawl);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--pen);
+  text-align: center;
+  margin-top: 0.15rem;
+}
+.rules strong { display: block; font-variation-settings: "INFM" 100; font-weight: 800; font-size: 1.2rem; }
+.rules p { margin: 0.1rem 0 0; }
+
+/* Steps */
+.steps { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 2rem; counter-reset: s; }
+.steps li { counter-increment: s; }
+.steps li:nth-child(1) { transform: rotate(-2deg); background: var(--hl); }
+.steps li:nth-child(2) { transform: rotate(1.5deg); background: var(--pink); }
+.steps li:nth-child(3) { transform: rotate(-1deg); background: var(--sky); }
+.steps li::after {
+  content: counter(s);
+  position: absolute;
+  top: 0.6rem; right: 0.9rem;
+  font-family: var(--scrawl);
+  font-size: 2.6rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+.steps h3 { margin: 0 2.5rem 0.4rem 0; font-variation-settings: "INFM" 100; font-weight: 800; font-size: 1.35rem; line-height: 1.2; }
+.steps p { margin: 0; }
+.disclosure { margin-top: 3rem; max-width: 44rem; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.5rem 1rem; align-items: start; }
+.disclosure svg { width: 70px; height: 50px; }
+.disclosure p { margin: 0.2rem 0 0; }
+.disclosure q { font-family: var(--scrawl); font-size: 1.3rem; line-height: 1.35; color: var(--pen); }
+
+footer { padding-block: 2rem 3rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; align-items: baseline; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .spec { transition: none; }
+}
+@media (max-width: 860px) {
+  .hero-grid, .brief { grid-template-columns: minmax(0, 1fr); }
+  .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rules { grid-template-columns: minmax(0, 1fr); }
+  .timeline, .steps { grid-template-columns: minmax(0, 1fr); }
+  .track { display: none; }
+  .steps { max-width: 26rem; }
+}
+@media (max-width: 560px) {
+  .specs { grid-template-columns: minmax(0, 1fr); }
+  .hero::before { display: none; }
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="wob" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+    <feDisplacementMap in="SourceGraphic" scale="4"/>
+  </filter>
+</svg>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-meta">
+        <span class="typed">A short film competition</span>
+        <span class="typed">London screening · Jan 2027</span>
+      </div>
+      <h1>
+        <span class="pre">Capitalism in the</span>
+        <span class="big"><span class="circled">22nd<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M26 58 C 18 18, 178 6, 188 48 C 196 86, 40 98, 14 66 C 0 46, 56 14, 128 16"/></svg></span> Century</span>
+      </h1>
+      <span class="scrawl aside-note">↖ yes, the next one</span>
+      <p class="lede">Make a 5 to 10 minute film about where the economy goes from here. Any genre, any country, any tools, including AI.</p>
+      <div class="sticky clock" aria-live="polite">
+        <span class="typed" id="clock-label">Submissions close</span>
+        <div class="clock-row" id="clock-row">
+          <div class="clock-unit"><span class="clock-num">14 Dec</span><span class="clock-cap">2026</span></div>
+        </div>
+        <p>End of day, Anywhere on Earth (UTC−12)</p>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg class="doodle" viewBox="0 0 420 380" role="img" aria-label="Doodle of a stock chart rocketing off the page while a stick figure films it">
+        <g class="wob">
+          <path d="M44 340 L44 40 M34 54 L44 38 L54 54"/>
+          <path d="M44 340 L400 340 M386 330 L402 340 L386 350"/>
+          <path d="M40 280 h8 M40 220 h8 M40 160 h8 M40 100 h8"/>
+          <path d="M170 318 L196 306 L214 316 L240 276 L260 288 L284 222 L304 236 L330 138 L350 154 L392 22" stroke-width="5"/>
+          <path d="M370 26 L394 18 L396 44" stroke-width="5"/>
+          <circle cx="86" cy="250" r="15" class="f-hl"/>
+          <path d="M80 248 h1 M92 248 h1 M80 257 q6 5 12 0"/>
+          <path d="M86 265 L86 304 M86 304 L72 338 M86 304 L100 338"/>
+          <path d="M86 278 L112 270 M86 278 L110 284"/>
+          <rect x="108" y="258" width="34" height="24" rx="4" class="f-sky"/>
+          <circle cx="117" cy="248" r="8"/>
+          <circle cx="134" cy="248" r="8"/>
+          <path d="M142 264 L158 254 L158 288 L142 278 Z"/>
+          <path d="M164 254 L182 240 M166 270 L188 270 M164 286 L182 300" stroke-width="2"/>
+        </g>
+        <circle cx="112" cy="232" r="4" class="f-pink" style="stroke:none"/>
+        <text x="120" y="236" font-size="15">REC</text>
+        <text x="236" y="40" font-size="24">ONECO ↑↑↑</text>
+        <text x="236" y="64" font-size="17">(the whole market)</text>
+        <text x="58" y="374" font-size="17">← you, documenting it</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="tickers">
+  <span class="tag a">✗ the future everyone's scared of</span>
+  <div class="ticker a" aria-hidden="true">
+    <div class="ticker-track">
+      <span><span class="sym">ONECO</span> ▲ 100.00%</span>
+      <span class="dead">ACME ROBOTICS 0.00 ▼100%</span>
+      <span class="dead">JEFF ARCHITECTS 0.00 ▼100%</span>
+      <span class="dead">GRANDMA'S PICKLES 0.00 ▼100%</span>
+      <span>HUMAN HEADCOUNT: 0</span>
+      <span class="dead">MUMBAI MOTORS 0.00 ▼100%</span>
+      <span>BREAKING: <span class="sym">ONECO</span> ACQUIRES <span class="sym">ONECO</span></span>
+      <span class="dead">EVERY OTHER COMPANY 0.00 ▼100%</span>
+      <span><span class="sym">ONECO</span> ▲ 100.00%</span>
+      <span class="dead">ACME ROBOTICS 0.00 ▼100%</span>
+      <span class="dead">JEFF ARCHITECTS 0.00 ▼100%</span>
+      <span class="dead">GRANDMA'S PICKLES 0.00 ▼100%</span>
+      <span>HUMAN HEADCOUNT: 0</span>
+      <span class="dead">MUMBAI MOTORS 0.00 ▼100%</span>
+      <span>BREAKING: <span class="sym">ONECO</span> ACQUIRES <span class="sym">ONECO</span></span>
+      <span class="dead">EVERY OTHER COMPANY 0.00 ▼100%</span>
+    </div>
+  </div>
+  <div class="ticker b" aria-hidden="true">
+    <div class="ticker-track">
+      <span>JEFF ARCHITECTS <span class="up">▲ 1.8%</span></span>
+      <span>GRANDMA'S PICKLES <span class="up">▲ 0.6%</span></span>
+      <span>ACME ROBOTICS <span class="down">▼ 2.3%</span></span>
+      <span>ANTHROPIC <span class="up">▲ 0.4%</span> (MID-TABLE, DOING FINE)</span>
+      <span>MUMBAI MOTORS <span class="up">▲ 3.1%</span></span>
+      <span>LISTED COMPANIES: 48,211</span>
+      <span>TINY LONDON CINEMA <span class="down">▼ 0.9%</span></span>
+      <span>JEFF ARCHITECTS <span class="up">▲ 1.8%</span></span>
+      <span>GRANDMA'S PICKLES <span class="up">▲ 0.6%</span></span>
+      <span>ACME ROBOTICS <span class="down">▼ 2.3%</span></span>
+      <span>ANTHROPIC <span class="up">▲ 0.4%</span> (MID-TABLE, DOING FINE)</span>
+      <span>MUMBAI MOTORS <span class="up">▲ 3.1%</span></span>
+      <span>LISTED COMPANIES: 48,211</span>
+      <span>TINY LONDON CINEMA <span class="down">▼ 0.9%</span></span>
+    </div>
+  </div>
+  <span class="tag b">✓ the one we'd bet on</span>
+  <p class="sr-only">Two stock tickers. The first, labelled the future everyone's scared of, shows one company owning 100% of the market and every other company at zero. The second, labelled the one we'd bet on, shows thousands of companies trading normally, with Anthropic as an ordinary mid-table company.</p>
+</div>
+
+<main>
+  <section>
+    <div class="wrap brief">
+      <div>
+        <div class="head">
+          <span class="typed">The brief</span>
+          <h2>Who owns what when <span class="hl">the machines do the work?</span></h2>
+        </div>
+        <p>We've all seen the usual version. Humans asleep in pods. Humans pedalling exercise bikes for credits. Humans floating around a spaceship, too comfortable to stand up. One AI company trains on every profession, does every job better, and the whole stock market turns into a single ticker.</p>
+        <p>We're not convinced it goes that way. Show us the economy of the next century as you see it: the dystopia, the boring-but-fine version where companies keep competing, or something nobody has filmed yet. Satire, drama, mockumentary, animation: all welcome.</p>
+      </div>
+      <div class="robot">
+        <svg class="doodle" viewBox="0 0 220 280" role="img" aria-label="Doodle of a smiling robot in a suit carrying a briefcase">
+          <g class="wob">
+            <path d="M110 26 L110 10"/>
+            <circle cx="110" cy="8" r="6" class="f-pink"/>
+            <rect x="66" y="26" width="88" height="64" rx="12" class="f-sky"/>
+            <circle cx="90" cy="54" r="9"/>
+            <circle cx="130" cy="54" r="9"/>
+            <circle cx="92" cy="55" r="3" class="f-pen"/>
+            <circle cx="132" cy="55" r="3" class="f-pen"/>
+            <path d="M88 72 q22 14 44 0"/>
+            <path d="M58 50 v16 M162 50 v16"/>
+            <path d="M110 90 L110 100"/>
+            <path d="M70 100 L150 100 L160 196 L60 196 Z"/>
+            <path d="M110 100 L92 132 L110 168 L128 132 Z"/>
+            <path d="M110 108 L103 120 L110 152 L117 120 Z" class="f-pink"/>
+            <path d="M70 108 L46 176"/>
+            <path d="M150 108 L174 164"/>
+            <rect x="160" y="164" width="48" height="34" rx="4" class="f-hl"/>
+            <path d="M174 164 q10 -12 20 0"/>
+            <path d="M88 196 L82 258 L64 262"/>
+            <path d="M132 196 L140 258 L158 262"/>
+          </g>
+          <text x="166" y="187" font-size="13">Q4</text>
+        </svg>
+        <span class="scrawl">your replacement (very polite)</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="typed">What to deliver</span>
+        <h2 class="squig">The specs</h2>
+      </div>
+      <dl class="specs">
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><circle cx="32" cy="34" r="24"/><path d="M32 34 L32 18 M32 34 L44 40 M26 6 h12 M32 6 v4"/></g></svg>
+          <dt>Runtime</dt>
+          <dd><span class="val">5–10 min</span><span class="sub">Including titles and credits.</span></dd>
+        </div>
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><rect x="6" y="16" width="52" height="34" rx="5" class="f-sky"/><path d="M22 6 L32 16 L42 6 M24 58 h16 M32 50 v8"/></g><text x="19" y="40" font-size="17">4K</text></svg>
+          <dt>Resolution</dt>
+          <dd><span class="val">4K</span><span class="sub">3840 × 2160 pixels.</span></dd>
+        </div>
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><path d="M8 12 h48 v30 h-28 l-12 12 v-12 h-8 z"/><path d="M16 22 h32 M16 31 h22" stroke-width="2.5"/></g></svg>
+          <dt>Language</dt>
+          <dd><span class="val">English</span><span class="sub">Or English subtitles. The jury is English-speaking.</span></dd>
+        </div>
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><rect x="10" y="32" width="44" height="24" rx="3" class="f-pink"/><path d="M10 40 q5.5 6 11 0 q5.5 6 11 0 q5.5 6 11 0 q5.5 6 11 0"/><path d="M24 32 v-12 M40 32 v-12"/><path d="M24 14 q-3 -4 0 -8 q3 4 0 8 M40 14 q-3 -4 0 -8 q3 4 0 8" class="f-hl"/></g></svg>
+          <dt>Who can enter</dt>
+          <dd><span class="val">18+, anywhere</span><span class="sub">Entries from every country.</span></dd>
+        </div>
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><circle cx="14" cy="26" r="6"/><circle cx="32" cy="20" r="7" class="f-hl"/><circle cx="50" cy="26" r="6"/><path d="M4 54 q10 -20 20 0 M20 54 q12 -24 24 0 M40 54 q10 -20 20 0"/><path d="M28 6 l4 -4 l4 4" stroke-width="2"/></g></svg>
+          <dt>Team size</dt>
+          <dd><span class="val">Solo or team</span><span class="sub">Any size. Teams name one lead.</span></dd>
+        </div>
+        <div class="spec">
+          <svg class="doodle" viewBox="0 0 64 64" aria-hidden="true"><g class="wob"><path d="M32 18 V9"/><circle cx="32" cy="7" r="3"/><rect x="14" y="18" width="36" height="30" rx="6" class="f-sky"/><circle cx="25" cy="31" r="4"/><circle cx="39" cy="31" r="4"/><path d="M24 41 h16 M10 28 v10 M54 28 v10 M24 48 v8 M40 48 v8"/></g></svg>
+          <dt>AI tools</dt>
+          <dd><span class="val">Allowed</span><span class="sub">Not required. Tell us how you used them.</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="typed">Key dates</span>
+        <h2>Five weeks. <span class="hl pink">Pencils up, pencils down.</span></h2>
+      </div>
+      <svg class="doodle track" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><g class="wob"><path d="M10 16 C 200 6, 400 26, 600 14 S 900 8, 985 16 M968 6 L988 16 L968 26"/></g></svg>
+      <ol class="timeline">
+        <li>
+          <div class="ico">
+            <svg class="doodle" viewBox="0 0 64 84" aria-hidden="true"><g class="wob"><path d="M24 22 L32 4 L40 22 Z" class="f-hl"/><path d="M30 9 L32 4 L34 9" class="f-pen"/><rect x="24" y="22" width="16" height="46" class="f-hl"/><path d="M29 22 v46 M35 22 v46" stroke-width="1.5"/><rect x="24" y="68" width="16" height="10" rx="3" class="f-pink"/></g></svg>
+          </div>
+          <span class="date">Wed 11 Nov 2026</span>
+          <h3>Pencils up</h3>
+          <p>Submissions open. Production starts no earlier than today.</p>
+        </li>
+        <li>
+          <div class="ico down">
+            <svg class="doodle" viewBox="0 0 64 84" aria-hidden="true"><g class="wob"><path d="M24 22 L32 4 L40 22 Z" class="f-hl"/><path d="M30 9 L32 4 L34 9" class="f-pen"/><rect x="24" y="22" width="16" height="46" class="f-hl"/><path d="M29 22 v46 M35 22 v46" stroke-width="1.5"/><rect x="24" y="68" width="16" height="10" rx="3" class="f-pink"/></g></svg>
+          </div>
+          <span class="date">Mon 14 Dec 2026</span>
+          <h3>Pencils down</h3>
+          <p>Last day to submit, end of day Anywhere on Earth.</p>
+        </li>
+        <li>
+          <div class="ico">
+            <svg class="doodle" viewBox="0 0 84 84" aria-hidden="true"><g class="wob"><rect x="6" y="8" width="72" height="42" rx="3" class="f-sky"/><path d="M14 72 a8 8 0 0 1 16 0 M34 72 a8 8 0 0 1 16 0 M54 72 a8 8 0 0 1 16 0"/></g><text x="18" y="36" font-size="16">THE END</text></svg>
+          </div>
+          <span class="date">Early Jan 2027</span>
+          <h3>London screening</h3>
+          <p>Selected films screen at a live event. The jury picks the winner.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="typed">Rules</span>
+        <h2 class="squig">The fine print</h2>
+      </div>
+      <ul class="rules">
+        <li><div><strong>New work only</strong><p>Bring an idea you've had for years if you like, but don't submit anything you'd already started making before 11 November.</p></div></li>
+        <li><div><strong>One lead each</strong><p>Help out on as many films as you like, but you can be the designated lead on only one submission.</p></div></li>
+        <li><div><strong>Say how you used AI</strong><p>Every AI tool is allowed. Include a short note on which ones you used and for what.</p></div></li>
+        <li><div><strong>Keep it unlisted</strong><p>Upload to YouTube as an unlisted video and send us the link. Don't post it publicly yet: we'll release every film together after the deadline.</p></div></li>
+        <li><div><strong>English or subtitled</strong><p>English dialogue, or English subtitles for any other language.</p></div></li>
+        <li><div><strong>Jury decides</strong><p>Selected films screen in London. A jury of filmmakers and writers, to be announced, decides the final award.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="typed">How to enter</span>
+        <h2>Three steps. <span class="hl">That's it.</span></h2>
+      </div>
+      <ol class="steps">
+        <li class="sticky">
+          <h3>Make the film</h3>
+          <p>5 to 10 minutes, in 4K, made between 11 November and 14 December 2026.</p>
+        </li>
+        <li class="sticky">
+          <h3>Upload it unlisted</h3>
+          <p>Post it to YouTube with visibility set to Unlisted, so only people with the link can watch. We'll release them all together.</p>
+        </li>
+        <li class="sticky">
+          <h3>Send us the link</h3>
+          <p>With the lead's name, the team, and your AI note. The submission link goes live on 11 November.</p>
+        </li>
+      </ol>
+      <div class="disclosure">
+        <svg class="doodle" viewBox="0 0 70 50" aria-hidden="true"><g class="wob"><path d="M4 10 C 20 4, 40 40, 60 34 M48 24 L62 34 L48 44"/></g></svg>
+        <div>
+          <span class="typed">An AI note could look like this</span>
+          <p><q>We wrote the script ourselves and shot live action. We used an image model for three background plates in the city sequence and an AI voice for the announcer.</q></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="scrawl">Capitalism in the 22nd Century</span>
+    <span class="typed">Open 11 Nov – 14 Dec 2026 · London, Jan 2027</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var OPEN = Date.UTC(2026, 10, 11, 0, 0, 0);
+  // End of 14 Dec Anywhere on Earth (UTC-12) = 15 Dec 12:00 UTC
+  var CLOSE = Date.UTC(2026, 11, 15, 12, 0, 0);
+  var label = document.getElementById("clock-label");
+  var row = document.getElementById("clock-row");
+
+  function unit(n, cap) {
+    return '<div class="clock-unit"><span class="clock-num">' + String(n).padStart(2, "0") +
+      '</span><span class="clock-cap">' + cap + "</span></div>";
+  }
+  function render() {
+    var now = Date.now();
+    var target, text;
+    if (now < OPEN) { target = OPEN; text = "Submissions open in"; }
+    else if (now < CLOSE) { target = CLOSE; text = "Submissions close in"; }
+    else {
+      label.textContent = "Submissions closed";
+      row.innerHTML = '<div class="clock-unit"><span class="clock-num">See you in London</span></div>';
+      return;
+    }
+    var s = Math.max(0, Math.floor((target - now) / 1000));
+    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+    label.textContent = text;
+    row.innerHTML = unit(d, "days") + unit(h, "hours") + unit(m, "minutes");
+  }
+  render();
+  setInterval(render, 30000);
+})();
+</script>
+</body>
+</html>
