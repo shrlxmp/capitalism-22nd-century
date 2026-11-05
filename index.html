@@ -10,6 +10,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Capitalism in the 22nd Century</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='5' y='5' width='54' height='54' rx='14' fill='%23eef542' transform='rotate(-5 32 32)'/%3E%3Ccircle cx='21' cy='19' r='8' fill='none' stroke='%235a2bb0' stroke-width='5'/%3E%3Ccircle cx='38' cy='19' r='8' fill='none' stroke='%235a2bb0' stroke-width='5'/%3E%3Crect x='9' y='29' width='35' height='23' rx='4' fill='%235a2bb0'/%3E%3Cpath d='M44 36 L57 28 L57 53 L44 45 Z' fill='%235a2bb0'/%3E%3Ccircle cx='16' cy='35.5' r='3.5' fill='%23ff6fae'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,INFM@300..800,0..100&display=swap">
@@ -89,6 +90,7 @@ a:focus-visible { outline: 3px dashed var(--pen); outline-offset: 3px; }
 .doodle .f-hl { fill: var(--hl); }
 .doodle .f-sky { fill: var(--sky); }
 .doodle .f-pen { fill: currentColor; }
+.doodle .f-paper { fill: var(--paper); }
 .doodle text { stroke: none; fill: currentColor; font-family: var(--scrawl); }
 
 .typed { font-family: var(--typed); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
@@ -179,7 +181,10 @@ h1 .big {
   transform: rotate(-3deg);
 }
 .sticky .typed { color: var(--note-ink); opacity: 0.7; }
-.clock { max-width: 20rem; transform: rotate(2deg); margin-top: 2rem; }
+.clocks { display: flex; flex-wrap: wrap; gap: 1.75rem 1.25rem; margin-top: 2.25rem; }
+.clock { flex: 1 1 14rem; max-width: 19rem; }
+.clock.one { transform: rotate(-2deg); }
+.clock.two { transform: rotate(2deg); background: var(--pink); }
 .clock-row { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-top: 0.25rem; }
 .clock-unit { display: grid; line-height: 1; }
 .clock-num { font-family: var(--scrawl); font-size: 2.6rem; font-variant-numeric: tabular-nums; }
@@ -349,23 +354,51 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </h1>
       <span class="scrawl aside-note">↖ yes, the next one</span>
       <p class="lede">We want 5–10 minute films about what money and work look like a hundred years from now. Shoot it on your phone or generate the whole thing. Up to you.</p>
-      <div class="sticky clock" aria-live="polite">
-        <span class="typed" id="clock-label">Submissions close</span>
-        <div class="clock-row" id="clock-row">
-          <div class="clock-unit"><span class="clock-num">14 Dec</span><span class="clock-cap">2026</span></div>
+      <div class="clocks">
+        <div class="sticky clock one" aria-live="polite">
+          <span class="typed" id="open-label">Pencils up</span>
+          <div class="clock-row" id="open-row">
+            <div class="clock-unit"><span class="clock-num">11 Nov</span><span class="clock-cap">2026</span></div>
+          </div>
+          <p id="open-note">Submissions open</p>
         </div>
-        <p>End of day, Anywhere on Earth (UTC−12)</p>
+        <div class="sticky clock two" aria-live="polite">
+          <span class="typed" id="close-label">Pencils down</span>
+          <div class="clock-row" id="close-row">
+            <div class="clock-unit"><span class="clock-num">14 Dec</span><span class="clock-cap">2026</span></div>
+          </div>
+          <p>End of day, Anywhere on Earth (UTC−12)</p>
+        </div>
       </div>
     </div>
 
     <div class="hero-art">
-      <svg class="doodle" viewBox="0 0 420 380" role="img" aria-label="Doodle of a stock chart rocketing off the page while a stick figure films it">
+      <svg class="doodle" viewBox="0 0 420 380" role="img" aria-label="Doodle of a stick figure filming the economy of 2126: a many-eyed blob monster in a smiley mask and an ONECO tie, lassoing a tiny building labelled JOBS">
         <g class="wob">
-          <path d="M44 340 L44 40 M34 54 L44 38 L54 54"/>
-          <path d="M44 340 L400 340 M386 330 L402 340 L386 350"/>
-          <path d="M40 280 h8 M40 220 h8 M40 160 h8 M40 100 h8"/>
-          <path d="M170 318 L196 306 L214 316 L240 276 L260 288 L284 222 L304 236 L330 138 L350 154 L392 22" stroke-width="5"/>
-          <path d="M370 26 L394 18 L396 44" stroke-width="5"/>
+          <path d="M18 340 C 140 336, 300 344, 412 339"/>
+          <path d="M160 252 L236 150 M160 290 L232 332" stroke-width="2" stroke-dasharray="5 8"/>
+          <path d="M240 322 C 222 270, 226 190, 250 150 C 270 112, 320 96, 352 112 C 388 130, 402 190, 396 250 C 392 288, 398 308, 400 322 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 q -10 16 -20 0 Z" class="f-sky"/>
+          <circle cx="262" cy="160" r="6" class="f-paper"/>
+          <circle cx="300" cy="128" r="5" class="f-paper"/>
+          <circle cx="354" cy="132" r="6" class="f-paper"/>
+          <circle cx="378" cy="212" r="5" class="f-paper"/>
+          <circle cx="258" cy="252" r="4" class="f-paper"/>
+          <circle cx="380" cy="272" r="4" class="f-paper"/>
+          <path d="M286 190 L250 174 M358 190 L392 170"/>
+          <circle cx="322" cy="192" r="36" class="f-hl"/>
+          <path d="M304 186 q6 -8 12 0 M328 186 q6 -8 12 0"/>
+          <path d="M302 202 q20 20 40 0"/>
+          <path d="M314 232 h16 l-3 9 h-10 z" class="f-pink"/>
+          <path d="M317 241 L309 288 L322 302 L335 288 L327 241 Z" class="f-pink"/>
+          <rect x="342" y="242" width="48" height="20" rx="3" class="f-paper"/>
+          <rect x="178" y="296" width="38" height="42" class="f-paper"/>
+          <rect x="180" y="278" width="34" height="15" rx="2" class="f-hl"/>
+          <path d="M197 293 v3"/>
+          <path d="M186 306 h8 M200 306 h8 M186 318 h8 M200 318 h8" stroke-width="2"/>
+          <path d="M193 338 v-10 h8 v10"/>
+          <path d="M242 292 C 228 296, 224 304, 220 306 C 206 312, 186 314, 176 306 C 170 300, 176 292, 186 296" stroke-width="5"/>
+          <path d="M168 276 q-4 6 0 9 q4 -3 0 -9 M160 288 q-3 5 0 7 q3 -2 0 -7" stroke-width="2"/>
+          <path d="M330 60 C 352 62, 362 76, 358 98 M349 88 L358 100 L366 87"/>
           <circle cx="86" cy="250" r="15" class="f-hl"/>
           <path d="M80 248 h1 M92 248 h1 M80 257 q6 5 12 0"/>
           <path d="M86 265 L86 304 M86 304 L72 338 M86 304 L100 338"/>
@@ -374,12 +407,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <circle cx="117" cy="248" r="8"/>
           <circle cx="134" cy="248" r="8"/>
           <path d="M142 264 L158 254 L158 288 L142 278 Z"/>
-          <path d="M164 254 L182 240 M166 270 L188 270 M164 286 L182 300" stroke-width="2"/>
         </g>
+        <circle cx="256" cy="161" r="2.5" class="f-pen" style="stroke:none"/>
+        <circle cx="295" cy="129" r="2.2" class="f-pen" style="stroke:none"/>
+        <circle cx="348" cy="133" r="2.5" class="f-pen" style="stroke:none"/>
+        <circle cx="373" cy="213" r="2.2" class="f-pen" style="stroke:none"/>
+        <circle cx="255" cy="253" r="1.8" class="f-pen" style="stroke:none"/>
+        <circle cx="377" cy="273" r="1.8" class="f-pen" style="stroke:none"/>
+        <text x="347" y="257" font-size="12">ONECO</text>
+        <text x="185" y="290" font-size="12">JOBS</text>
         <circle cx="112" cy="232" r="4" class="f-pink" style="stroke:none"/>
         <text x="120" y="236" font-size="15">REC</text>
-        <text x="236" y="40" font-size="24">ONECO ↑↑↑</text>
-        <text x="236" y="64" font-size="17">(the whole market)</text>
+        <text x="150" y="66" font-size="22">the economy, 2126</text>
         <text x="58" y="374" font-size="17">← you, documenting it</text>
       </svg>
     </div>
@@ -608,27 +647,42 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   var OPEN = Date.UTC(2026, 10, 11, 0, 0, 0);
   // End of 14 Dec Anywhere on Earth (UTC-12) = 15 Dec 12:00 UTC
   var CLOSE = Date.UTC(2026, 11, 15, 12, 0, 0);
-  var label = document.getElementById("clock-label");
-  var row = document.getElementById("clock-row");
+  var openLabel = document.getElementById("open-label");
+  var openRow = document.getElementById("open-row");
+  var openNote = document.getElementById("open-note");
+  var closeLabel = document.getElementById("close-label");
+  var closeRow = document.getElementById("close-row");
 
   function unit(n, cap) {
     return '<div class="clock-unit"><span class="clock-num">' + String(n).padStart(2, "0") +
       '</span><span class="clock-cap">' + cap + "</span></div>";
   }
-  function render() {
-    var now = Date.now();
-    var target, text;
-    if (now < OPEN) { target = OPEN; text = "Submissions open in"; }
-    else if (now < CLOSE) { target = CLOSE; text = "Submissions close in"; }
-    else {
-      label.textContent = "Submissions closed";
-      row.innerHTML = '<div class="clock-unit"><span class="clock-num">See you in London</span></div>';
-      return;
-    }
+  function word(text) {
+    return '<div class="clock-unit"><span class="clock-num">' + text + "</span></div>";
+  }
+  function countdown(target, now) {
     var s = Math.max(0, Math.floor((target - now) / 1000));
     var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
-    label.textContent = text;
-    row.innerHTML = unit(d, "days") + unit(h, "hours") + unit(m, "minutes");
+    return unit(d, "days") + unit(h, "hours") + unit(m, "minutes");
+  }
+  function render() {
+    var now = Date.now();
+    if (now < OPEN) {
+      openLabel.textContent = "Pencils up in";
+      openRow.innerHTML = countdown(OPEN, now);
+      openNote.textContent = "Wed 11 Nov 2026";
+    } else {
+      openLabel.textContent = "Pencils up";
+      openRow.innerHTML = word("We're open ✓");
+      openNote.textContent = "Since Wed 11 Nov 2026";
+    }
+    if (now < CLOSE) {
+      closeLabel.textContent = "Pencils down in";
+      closeRow.innerHTML = countdown(CLOSE, now);
+    } else {
+      closeLabel.textContent = "Pencils down";
+      closeRow.innerHTML = word("See you in London");
+    }
   }
   render();
   setInterval(render, 30000);
