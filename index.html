@@ -185,8 +185,8 @@ h1 .big {
 .clock { flex: 1 1 16rem; max-width: 19rem; }
 .clock.one { transform: rotate(-2deg); }
 .clock.two { transform: rotate(2deg); background: var(--pink); }
-.clock-row { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 0.25rem; }
-.clock-unit { display: grid; line-height: 1; min-width: 2.6rem; }
+.clock-row { display: flex; gap: 0.7rem; flex-wrap: nowrap; margin-top: 0.25rem; }
+.clock-unit { display: grid; line-height: 1; min-width: 2.3rem; }
 .clock-num { font-family: var(--scrawl); font-size: 2.3rem; font-variant-numeric: tabular-nums; }
 .clock-cap { font-family: var(--typed); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
 .clock p { margin: 0.6rem 0 0; font-size: 0.92rem; }
@@ -663,7 +663,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   function countdown(target, now) {
     var s = Math.max(0, Math.floor((target - now) / 1000));
     var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
-    return unit(d, "days") + unit(h, "hours") + unit(m, "minutes") + unit(sec, "seconds");
+    return unit(d, "days") + unit(h, "hrs") + unit(m, "min") + unit(sec, "sec");
   }
   function render() {
     var now = Date.now();
