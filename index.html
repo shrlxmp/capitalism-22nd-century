@@ -182,12 +182,12 @@ h1 .big {
 }
 .sticky .typed { color: var(--note-ink); opacity: 0.7; }
 .clocks { display: flex; flex-wrap: wrap; gap: 1.75rem 1.25rem; margin-top: 2.25rem; }
-.clock { flex: 1 1 14rem; max-width: 19rem; }
+.clock { flex: 1 1 16rem; max-width: 19rem; }
 .clock.one { transform: rotate(-2deg); }
 .clock.two { transform: rotate(2deg); background: var(--pink); }
-.clock-row { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-top: 0.25rem; }
-.clock-unit { display: grid; line-height: 1; }
-.clock-num { font-family: var(--scrawl); font-size: 2.6rem; font-variant-numeric: tabular-nums; }
+.clock-row { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 0.25rem; }
+.clock-unit { display: grid; line-height: 1; min-width: 2.6rem; }
+.clock-num { font-family: var(--scrawl); font-size: 2.3rem; font-variant-numeric: tabular-nums; }
 .clock-cap { font-family: var(--typed); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
 .clock p { margin: 0.6rem 0 0; font-size: 0.92rem; }
 
@@ -355,14 +355,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <span class="scrawl aside-note">↖ yes, the next one</span>
       <p class="lede">We want 5–10 minute films about what money and work look like a hundred years from now. Shoot it on your phone or generate the whole thing. Up to you.</p>
       <div class="clocks">
-        <div class="sticky clock one" aria-live="polite">
+        <div class="sticky clock one">
           <span class="typed" id="open-label">Pencils up</span>
           <div class="clock-row" id="open-row">
             <div class="clock-unit"><span class="clock-num">11 Nov</span><span class="clock-cap">2026</span></div>
           </div>
           <p id="open-note">Submissions open</p>
         </div>
-        <div class="sticky clock two" aria-live="polite">
+        <div class="sticky clock two">
           <span class="typed" id="close-label">Pencils down</span>
           <div class="clock-row" id="close-row">
             <div class="clock-unit"><span class="clock-num">14 Dec</span><span class="clock-cap">2026</span></div>
@@ -662,8 +662,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   }
   function countdown(target, now) {
     var s = Math.max(0, Math.floor((target - now) / 1000));
-    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
-    return unit(d, "days") + unit(h, "hours") + unit(m, "minutes");
+    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
+    return unit(d, "days") + unit(h, "hours") + unit(m, "minutes") + unit(sec, "seconds");
   }
   function render() {
     var now = Date.now();
@@ -685,7 +685,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     }
   }
   render();
-  setInterval(render, 30000);
+  setInterval(render, 1000);
 })();
 </script>
 </body>
